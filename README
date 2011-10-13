@@ -1,0 +1,17 @@
+# Class: screen
+#   This module manages screen
+#
+# Definition:
+#   -
+#
+# Parameters:
+#   -
+#
+# Actions:
+#   Installs the screenrc
+#
+# Requires:
+#   -
+#
+# Sample Usage:
+#   -
