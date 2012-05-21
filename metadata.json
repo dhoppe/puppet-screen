@@ -8,8 +8,10 @@
   "summary": "Screen Module",
   "version": "0.0.4",
   "checksums": {
+    "Gemfile": "d5ce5c80f3c31e583507eb80b61b7400",
     "Modulefile": "ca142525288b9a94fdbf2f931676656e",
     "README": "7b2ddc69c52844591a4972ac4914b0d7",
+    "Rakefile": "aac3a0179a3d0a7749c5dfc1384829e5",
     "files/common/etc/screenrc": "0e8f863118487a670ae15d7746088da3",
     "manifests/init.pp": "36175edbbd2da597c20d530b0814db77",
     "manifests/params.pp": "5fea6e889a50ee156f9d2f43ee847af4",
