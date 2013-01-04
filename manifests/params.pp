@@ -12,7 +12,7 @@
 #
 class screen::params {
   case $::lsbdistcodename {
-    'squeeze', 'wheezy': {
+    'squeeze', 'wheezy', 'precise': {
       $ensure = present
     }
     default: {
