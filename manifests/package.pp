@@ -11,7 +11,7 @@
 # == Sample Usage:
 #
 class screen::package (
-  $ensure = hiera('ensure', $metche::params::ensure),
+  $ensure = hiera('ensure', $screen::params::ensure),
 ) inherits screen::params {
   validate_re($ensure, '^(absent|present)$')
 
