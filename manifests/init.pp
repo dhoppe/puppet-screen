@@ -1,13 +1,16 @@
-class screen inherits screen::params {
-  file { '/etc/screenrc':
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    source  => 'puppet:///modules/screen/common/etc/screenrc',
-    require => Package['screen'],
-  }
-
-  package { 'screen':
-    ensure => present,
-  }
+# = Class: screen
+#
+# This module manages screen
+#
+# == Parameters: none
+#
+# == Actions:
+#
+# == Requires: see Modulefile
+#
+# == Sample Usage:
+#
+class screen {
+  class { 'screen::package': }
+  class { 'screen::config': }
 }
