@@ -1,0 +1,2 @@
+---
+screen::config_file_source: 'puppet:///modules/screen/common/etc/screenrc'
