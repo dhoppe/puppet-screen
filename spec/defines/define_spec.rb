@@ -11,6 +11,7 @@ describe 'screen::define', :type => :define do
     context "on #{osfamily}" do
       context 'when source file' do
         let(:params) {{
+          :config_file_path   => '/etc/screenrc.2nd',
           :config_file_source => 'puppet:///modules/screen/common/etc/screenrc',
         }}
 
@@ -25,6 +26,7 @@ describe 'screen::define', :type => :define do
 
       context 'when content string' do
         let(:params) {{
+          :config_file_path   => '/etc/screenrc.3rd',
           :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
         }}
 
@@ -39,6 +41,7 @@ describe 'screen::define', :type => :define do
 
 #      context 'when content template' do
 #        let(:params) {{
+#          :config_file_path     => '/etc/screenrc.4th',
 #          :config_file_template => 'screen/common/etc/screenrc.erb',
 #        }}
 #
@@ -53,6 +56,7 @@ describe 'screen::define', :type => :define do
 #
 #      context 'when content template (custom)' do
 #        let(:params) {{
+#          :config_file_path         => '/etc/screenrc.5th',
 #          :config_file_template     => 'screen/common/etc/screenrc.erb',
 #          :config_file_options_hash => {
 #            'key' => 'value',
