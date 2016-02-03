@@ -1,3 +1,7 @@
+## 2016-02-03 Release 1.0.5
+### Summary:
+- RHEL & CentOS 6 & 7 added to supported OSes
+
 ## 2015-08-13 Release 1.0.4
 ### Summary:
 - [Beaker] Update Beaker environment
