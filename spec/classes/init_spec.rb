@@ -17,9 +17,9 @@ describe 'screen', :type => :class do
       describe 'screen::install' do
         context 'defaults' do
           it do
-            is_expected.to contain_package('screen').with({
+            is_expected.to contain_package('screen').with(
               'ensure' => 'present',
-            })
+            )
           end
         end
 
@@ -29,9 +29,9 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('screen').with({
+            is_expected.to contain_package('screen').with(
               'ensure' => 'latest',
-            })
+            )
           end
         end
 
@@ -41,15 +41,15 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('screen').with({
+            is_expected.to contain_package('screen').with(
               'ensure' => 'absent',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('screen.conf').with({
+            is_expected.to contain_file('screen.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
 
@@ -59,15 +59,15 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('screen').with({
+            is_expected.to contain_package('screen').with(
               'ensure' => 'purged',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('screen.conf').with({
+            is_expected.to contain_file('screen.conf').with(
               'ensure'  => 'absent',
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
       end
@@ -75,10 +75,10 @@ describe 'screen', :type => :class do
       describe 'screen::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('screen.conf').with({
+            is_expected.to contain_file('screen.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
 
@@ -88,14 +88,14 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('screen.dir').with({
+            is_expected.to contain_file('screen.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/screen/common/etc',
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
 
@@ -106,14 +106,14 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('screen.dir').with({
+            is_expected.to contain_file('screen.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/screen/common/etc',
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
 
@@ -123,11 +123,11 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('screen.conf').with({
+            is_expected.to contain_file('screen.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/screen/common/etc/screenrc',
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
 
@@ -137,44 +137,44 @@ describe 'screen', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('screen.conf').with({
+            is_expected.to contain_file('screen.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[screen]',
-            })
+            )
           end
         end
 
-#        context 'when content template' do
-#          let(:params) {{
-#            :config_file_template => 'screen/common/etc/screenrc.erb',
-#          }}
-#
-#          it do
-#            is_expected.to contain_file('screen.conf').with({
-#              'ensure'  => 'present',
-#              'content' => /THIS FILE IS MANAGED BY PUPPET/,
-#              'require' => 'Package[screen]',
-#            })
-#          end
-#        end
-#
-#        context 'when content template (custom)' do
-#          let(:params) {{
-#            :config_file_template     => 'screen/common/etc/screenrc.erb',
-#            :config_file_options_hash => {
-#              'key' => 'value',
-#            },
-#          }}
-#
-#          it do
-#            is_expected.to contain_file('screen.conf').with({
-#              'ensure'  => 'present',
-#              'content' => /THIS FILE IS MANAGED BY PUPPET/,
-#              'require' => 'Package[screen]',
-#            })
-#          end
-#        end
+        # context 'when content template' do
+        #   let(:params) {{
+        #     :config_file_template => 'screen/common/etc/screenrc.erb',
+        #   }}
+
+        #   it do
+        #     is_expected.to contain_file('screen.conf').with(
+        #       'ensure'  => 'present',
+        #       'content' => /THIS FILE IS MANAGED BY PUPPET/,
+        #       'require' => 'Package[screen]',
+        #     )
+        #   end
+        # end
+
+        # context 'when content template (custom)' do
+        #   let(:params) {{
+        #     :config_file_template     => 'screen/common/etc/screenrc.erb',
+        #     :config_file_options_hash => {
+        #       'key' => 'value',
+        #     },
+        #   }}
+
+        #   it do
+        #     is_expected.to contain_file('screen.conf').with(
+        #       'ensure'  => 'present',
+        #       'content' => /THIS FILE IS MANAGED BY PUPPET/,
+        #       'require' => 'Package[screen]',
+        #     )
+        #   end
+        # end
       end
     end
   end
