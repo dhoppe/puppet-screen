@@ -36,7 +36,7 @@ This module handles installing and configuring Screen across a range of operatin
 
 ### Setup Requirements
 
-* Puppet >= 2.7
+* Puppet >= 3.0
 * Facter >= 1.6
 * [Stdlib module](https://github.com/puppetlabs/puppetlabs-stdlib)
 
