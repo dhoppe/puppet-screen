@@ -1,21 +1,19 @@
 require 'spec_helper'
 
 describe 'screen', type: :class do
-  ['Debian'].each do |osfamily|
-    let(:facts) do
-      {
-        osfamily: osfamily
-      }
-    end
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    it { is_expected.to compile.with_all_deps }
-    it { is_expected.to contain_anchor('screen::begin') }
-    it { is_expected.to contain_class('screen::params') }
-    it { is_expected.to contain_class('screen::install') }
-    it { is_expected.to contain_class('screen::config') }
-    it { is_expected.to contain_anchor('screen::end') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_anchor('screen::begin') }
+      it { is_expected.to contain_class('screen::params') }
+      it { is_expected.to contain_class('screen::install') }
+      it { is_expected.to contain_class('screen::config') }
+      it { is_expected.to contain_anchor('screen::end') }
 
-    context "on #{osfamily}" do
       describe 'screen::install' do
         context 'defaults' do
           it do
