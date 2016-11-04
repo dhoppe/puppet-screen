@@ -7,14 +7,14 @@ when 'Debian'
   config_file_path = '/etc/screenrc'
 end
 
-describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
+describe 'screen', if: SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   it 'is_expected.to work with no errors' do
     pp = <<-EOS
       class { 'screen': }
     EOS
 
-    apply_manifest(pp, :catch_failures => true)
-    apply_manifest(pp, :catch_changes => true)
+    apply_manifest(pp, catch_failures: true)
+    apply_manifest(pp, catch_changes: true)
   end
 
   describe 'screen::install' do
@@ -24,7 +24,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'screen': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -40,7 +40,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -56,7 +56,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -75,7 +75,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -94,7 +94,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'screen': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -110,7 +110,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_dir_path) do
@@ -127,7 +127,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_dir_path) do
@@ -143,7 +143,7 @@ describe 'screen', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
