@@ -1,10 +1,11 @@
 # screen
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-screen.png?branch=master)](https://travis-ci.org/dhoppe/puppet-screen)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-screen/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-screen)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/screen.svg)](https://forge.puppetlabs.com/dhoppe/screen)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/screen.svg)](https://forge.puppetlabs.com/dhoppe/screen)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/screen.svg)](https://forge.puppetlabs.com/dhoppe/screen)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/screen.svg)](https://forge.puppetlabs.com/dhoppe/screen)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/screen.svg)](https://forge.puppetlabs.com/dhoppe/screen)
 
 #### Table of Contents
 
